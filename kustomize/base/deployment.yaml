@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-go-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-go-service
+  template:
+    metadata:
+      labels:
+        app: simple-go-service
+    spec:
+      containers:
+        - name: simple-go-service
+          image: aujung/simple-go-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: app-config
