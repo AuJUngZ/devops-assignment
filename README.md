@@ -36,3 +36,10 @@ However, you can also use the Docker image provided in the Docker Hub registry. 
 In the `kustomize` directory, you will find the base configuration and overlays for different environments. The base configuration includes a deployment and service YAML file. The overlays for `dev` and `prod` environments include their own `kustomization.yaml` files that reference the base configuration.
 
 For different environments, you will see different output when you apply those configurations.
+
+#### Dev Env
+![Screenshot 2025-04-22 201508](https://github.com/user-attachments/assets/59b04923-c4ec-4962-bbb2-6b54ab038087)
+
+#### Prod Env 
+![Screenshot 2025-04-22 201831](https://github.com/user-attachments/assets/66ba02e5-415b-4378-996f-792eb3e12821)
+
