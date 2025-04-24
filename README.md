@@ -33,6 +33,10 @@ docker build -t simple-go-service:latest ./go-service
 
 However, you can also use the Docker image provided in the Docker Hub registry. The image is named `aujung/simple-go-service`. Also, you can click [here](https://hub.docker.com/r/aujung/simple-go-service) to see the Docker Hub page.
 
+### Terraform
+
+In the `terraform` directory, you will find the Terraform configuration files to create a GKE cluster.
+
 ### ArgoCD
 
 In this section, you need to install ArgoCD in your Kubernetes cluster. You can follow the official [ArgoCD installation guide](https://argo-cd.readthedocs.io/en/stable/getting_started/) to set it up.
