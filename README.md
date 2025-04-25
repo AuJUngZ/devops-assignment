@@ -11,7 +11,7 @@
 │   ├── go.mod
 │   ├── main.go
 ├── terraform # Terraform configuration for GKE cluster
-├──argocd # ArgoCD application configuration
+├── argocd # ArgoCD application configuration
 |   ├── application.yaml
 ├── kustomize # Kustomize directory for Kubernetes deployment
 │   ├── base # Base configuration
