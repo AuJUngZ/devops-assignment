@@ -37,7 +37,13 @@ However, you can also use the Docker image provided in the Docker Hub registry. 
 
 ### Terraform
 
-In the `terraform` directory, you will find the Terraform configuration files to create a GKE cluster.
+In the `terraform` directory, you will find the Terraform configuration files to create a GKE cluster. This configuration includes the necessary resources such as VPC, subnets, and GKE cluster. You can initialize and apply the Terraform configuration using the following commands:
+
+```bash
+$ cd terraform
+$ terraform init
+$ terraform apply
+```
 
 ### ArgoCD
 
