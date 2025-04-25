@@ -44,3 +44,23 @@ jobs:
           provenance: false
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/simple-go-service:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/simple-go-service:buildcache,mode=max
+  update-deployment-config:
+    runs-on: ubuntu-latest
+    needs: build-and-push-to-docker-hub
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update deployment configuration
+        run: |
+          IMAGE_TAG=${{ secrets.DOCKER_USERNAME }}/simple-go-service:${{ github.ref_name }}
+          sed -i "s|image: .*|image: $IMAGE_TAG|g" ./kustomize/base/deployment.yaml
+
+      - name: Commit and push changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add ./kustomize/base/deployment.yaml
+          git commit -m "Update deployment configuration for version ${{ github.ref_name }}"
+          git push origin HEAD:main
