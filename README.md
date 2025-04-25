@@ -5,12 +5,12 @@
 ```
 |devops-assignment
 ├── README.md
-|── .github # Github Actions workflow for CI/CD
+├── .github # Github Actions workflow for CI/CD
 ├── go-service # Simple Go service
 │   ├── Dockerfile
 │   ├── go.mod
 │   ├── main.go
-|── terraform # Terraform configuration for GKE cluster
+├── terraform # Terraform configuration for GKE cluster
 ├──argocd # ArgoCD application configuration
 |   ├── application.yaml
 ├── kustomize # Kustomize directory for Kubernetes deployment
