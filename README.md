@@ -59,3 +59,11 @@ For different environments, you will see different output when you apply those c
 #### Prod Env
 
 ![Screenshot 2025-04-22 201831](https://github.com/user-attachments/assets/66ba02e5-415b-4378-996f-792eb3e12821)
+
+### .github/workflows
+
+In this directory, you will find the Github Actions workflow file for CI/CD. The workflow is triggered on push new tag to the `main` branch with the format `vX.X.X`. The workflow will build the Docker image, push it to Docker Hub [(Image Registry)](https://hub.docker.com/r/aujung/simple-go-service) , and deploy the new version of application to the Kubernetes cluster using ArgoCD via update the `deployment.yaml` file in the `kustomize/base` directory. The workflow will also create a new release in Github with the same tag.
+
+# TL;DR
+
+This demonstration is not a full-fledged CI/CD pipeline. It avoids using gitflow and focuses on the essential components and concepts of gitops, so that you will see everything in a single repository and a single branch.
